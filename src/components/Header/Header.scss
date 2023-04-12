@@ -1,0 +1,116 @@
+@import "../../globals";
+
+.Header {
+    background-color: $rose;
+    position: relative;
+
+    .Header-upperpart {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 2rem;
+        align-items: center;
+        max-width: 1140px;
+        margin: auto;
+
+        .DropdownAndProfile {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+
+            .Dropdown-button {
+                background-color: $jet;
+                color: white;
+                border: none;
+            }
+
+            .Dropdown-button:hover {
+                background-color: $jet_hover;
+            }
+
+            .Profile {
+                cursor: pointer;
+                color: $jet;
+            }
+
+            .Profile:hover {
+                color: $jet_hover;
+            }
+
+            .DropdownItem {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+            }
+        }
+
+
+    }
+
+    .Header-bottompart {
+        padding: 32px;
+        max-width: 1140px;
+        margin: auto;
+
+        .Welcome-text {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .Welcome-paraghaph {
+            font-weight: 700;
+            color: white;
+            margin-bottom: 3rem;
+        }
+    }
+
+    .Header-search {
+        display: flex;
+        background-color: white;
+        padding: 12px 12px;
+        width: fit-content;
+        margin: auto;
+        position: absolute;
+        bottom: -24px;
+        left: 50%;
+        transform: translate(-50%);
+        box-shadow: 8px 8px 24px -20px rgba(66, 68, 90, 1);
+        border-radius: 5px;
+        gap: 24px;
+        align-items: center;
+
+        .Search-dropdown {
+            background-color: $jet;
+            color: white;
+            border: none;
+        }
+
+        .Search-dropdown:hover {
+            background-color: $jet_hover;
+        }
+
+        .Search-date {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .Search-calendar {
+            position: absolute;
+            top: 60px;
+            left: 60%;
+            transform: translate(-60%);
+        }
+
+        .Search-button {
+            background-color: $air;
+            margin-left: 24px;
+            border: none;
+        }
+
+        .Search-button:hover {
+            background-color: $air_hover;
+        }
+    }
+}
