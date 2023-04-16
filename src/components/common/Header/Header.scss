@@ -122,10 +122,10 @@
         width: fit-content;
         margin: auto;
         position: absolute;
-        bottom: -24px;
+        bottom: -36px;
         left: 50%;
         transform: translate(-50%);
-        box-shadow: 8px 8px 24px -20px rgba(66, 68, 90, 1);
+        box-shadow: 1px 1px 13px -5px rgba(66, 68, 90, 1);
         border-radius: 5px;
         gap: 24px;
         align-items: center;
@@ -140,20 +140,6 @@
             background-color: $jet_hover;
         }
 
-        .Search-date {
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .Search-calendar {
-            position: absolute;
-            top: 60px;
-            left: 60%;
-            transform: translate(-60%);
-        }
-
         .Search-button {
             background-color: $air;
             margin-left: 24px;
@@ -162,6 +148,19 @@
 
         .Search-button:hover {
             background-color: $air_hover;
+        }
+
+        .Search-container {
+            display: flex;
+
+            .Search-checkboxesContainer {
+                border-left: 1px solid $jet;
+                padding-left: 0.5rem;
+            }
+
+            .Search-checkboxes {
+                display: flex;
+            }
         }
     }
 }

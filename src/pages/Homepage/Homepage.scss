@@ -1,21 +1,19 @@
 @import '../../globals.scss';
 
 .Homepage-listContainer {
-    margin-top: 30px;
     display: flex;
     gap: 24px;
     max-width: 1140px;
-    margin: 40px auto;
+    margin: 56px auto;
     padding: 0.5rem 2rem;
     flex-wrap: wrap;
     align-items: center;
-    //justify-content: center;
+    justify-content: center;
 
     .Homepage-listElements {
         display: flex;
         flex-direction: column;
         font-weight: 500;
-
         color: $jet;
 
         .Homepage-photo {

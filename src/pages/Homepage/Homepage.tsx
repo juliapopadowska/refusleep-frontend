@@ -9,6 +9,7 @@ import "./Homepage.scss";
 function Homepage() {
   const { t } = useTranslation();
   const [apartments, setApartments] = useState<Apartment[]>([]);
+  const [data, setData] = useState<Apartment[]>([]);
   const navigate = useNavigate();
 
   const handleDisplayDetails = (id: string) => {
@@ -16,15 +17,16 @@ function Homepage() {
   };
 
   useEffect(() => {
-    axios
-      .get("/api/apartments/apartments")
-      .then(({ data }) => setApartments(data));
+    axios.get("/api/apartments/apartments").then(({ data }) => {
+      setApartments(data);
+      setData(data);
+    });
   }, []);
   return (
     <div className="Homepage">
-      <Header type="withSearch" />
+      <Header type="withSearch" apartments={apartments} setData={setData} />
       <div className="Homepage-listContainer">
-        {apartments.map((ap, index) => {
+        {data.map((ap, index) => {
           return (
             <div
               className="Homepage-listElements"

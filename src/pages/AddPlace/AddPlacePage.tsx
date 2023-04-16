@@ -86,7 +86,6 @@ function AddPlacePage() {
   };
 
   const handleChangeCheckbox = (index: number) => {
-    console.log("change");
     setLanguagesCheckbox(
       languagesCheckbox.map((lang, currentIndex) =>
         currentIndex === index ? { ...lang, checked: !lang.checked } : lang

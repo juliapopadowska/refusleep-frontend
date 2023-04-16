@@ -1,44 +1,50 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, {
+  Dispatch,
+  SetStateAction,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import "./Header.scss";
 import { CgProfile } from "react-icons/cg";
-import { FaCalendarAlt } from "react-icons/fa";
 import Dropdown from "react-bootstrap/Dropdown";
 import { PL, GB, DE, UA } from "country-flag-icons/react/3x2";
-import { DateRange } from "react-date-range";
-import { format } from "date-fns";
-
-import "react-date-range/dist/styles.css";
-import "react-date-range/dist/theme/default.css";
-import { Button } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { UserContext } from "../../../context/AuthContext";
 import i18n from "../../../localization/i18n";
 import { useTranslation } from "react-i18next";
-
-type DateRangeType = {
-  startDate: Date;
-  endDate: Date;
-  key: string;
-};
+import { Apartment } from "../../../types";
 
 type HeaderProps = {
   type?: string;
+  apartments?: Apartment[];
+  setData?: Dispatch<SetStateAction<Apartment[]>>;
 };
 
-function Header({ type }: HeaderProps) {
+const languagesCheckboxInitial = [
+  { name: "Polish", checked: false },
+  { name: "English", checked: false },
+  { name: "German", checked: false },
+  { name: "Ukrainian", checked: false },
+];
+
+const typesCheckboxInitial = [
+  { name: "Apartment", checked: false },
+  { name: "Couch", checked: false },
+  { name: "Room", checked: false },
+];
+
+function Header({ type, apartments, setData }: HeaderProps) {
   const { t } = useTranslation();
   const [lang, setLang] = useState<string>("English");
-  const [openDate, setOpenDate] = useState<boolean>(false);
   const [showProfile, setShowProfile] = useState<boolean>(false);
-  const [date, setDate] = useState<DateRangeType[]>([
-    {
-      startDate: new Date(),
-      endDate: new Date(),
-      key: "selection",
-    },
-  ]);
   const { user, setUser } = useContext(UserContext);
   const [cityName, setCityName] = useState("Warsaw");
+  const [languagesCheckbox, setLanguagesCheckbox] = useState(
+    languagesCheckboxInitial
+  );
+  const [apartmentType, setApartmentType] = useState(typesCheckboxInitial);
 
   useEffect(() => {
     switch (lang) {
@@ -58,6 +64,72 @@ function Header({ type }: HeaderProps) {
         i18n.changeLanguage("en");
     }
   }, [lang]);
+
+  const handleChangeLanguageCheckbox = (index: number) => {
+    setLanguagesCheckbox(
+      languagesCheckbox.map((lang, currentIndex) =>
+        currentIndex === index ? { ...lang, checked: !lang.checked } : lang
+      )
+    );
+  };
+
+  const handleChangeTypeCheckbox = (index: number) => {
+    setApartmentType(
+      apartmentType.map((lang, currentIndex) =>
+        currentIndex === index ? { ...lang, checked: !lang.checked } : lang
+      )
+    );
+  };
+
+  const checkIfLanguage = (
+    apartment: Apartment,
+    details: string,
+    index: number
+  ) => {
+    if (languagesCheckbox[index].checked) {
+      if (apartment[`${details}` as keyof Apartment] !== "") return true;
+      else return false;
+    }
+    return true;
+  };
+
+  const checkIfType = (apartment: Apartment, index: number) => {
+    if (apartmentType[index].checked) {
+      if (apartment.type === apartmentType[index].name) return true;
+      else return false;
+    }
+    return true;
+  };
+
+  const handleSearch = () => {
+    if (setData && apartments)
+      setData(
+        apartments
+          .filter((elem) => elem.city === cityName)
+          .filter((elem) => checkIfLanguage(elem, "polishDetails", 0))
+          .filter((elem) => checkIfLanguage(elem, "englishDetails", 1))
+          .filter((elem) => checkIfLanguage(elem, "germanDetails", 2))
+          .filter((elem) => checkIfLanguage(elem, "ukrainianDetails", 3))
+          .filter((elem) => checkIfType(elem, 0))
+          .filter((elem) => checkIfType(elem, 1))
+          .filter((elem) => checkIfType(elem, 2))
+      );
+  };
+
+  const handleClearSearch = () => {
+    if (setData && apartments) setData(apartments);
+    setLanguagesCheckbox(
+      languagesCheckbox.map((lang) => {
+        return { ...lang, checked: false };
+      })
+    );
+    setApartmentType(
+      apartmentType.map((lang) => {
+        return { ...lang, checked: false };
+      })
+    );
+  };
+
   return (
     <div className="Header">
       <div className="Header-upperpart">
@@ -98,7 +170,6 @@ function Header({ type }: HeaderProps) {
               </Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
-          {/* add inicials - check if user */}
           <div className="Profile" onMouseLeave={() => setShowProfile(false)}>
             {user.name === "" ? (
               <CgProfile
@@ -149,7 +220,9 @@ function Header({ type }: HeaderProps) {
             <p className="Welcome-paraghaph">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam
+              enim ad minim veniam Lorem ipsum dolor sit amet, consectetur
+              adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+              dolore magna aliqua. Ut enim ad minim veniam
             </p>
           </div>
           <div className="Header-search">
@@ -179,30 +252,53 @@ function Header({ type }: HeaderProps) {
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
-            <div className="Search-date">
-              <FaCalendarAlt />
-              <span
-                onClick={() => setOpenDate(!openDate)}
-                className="Search-calendarText"
-              >{`${format(date[0].startDate, "dd/MM/yyyy")} to ${format(
-                date[0].endDate,
-                "dd/MM/yyyy"
-              )}`}</span>
-              {openDate && (
-                <DateRange
-                  editableDateInputs={true}
-                  onChange={(item) => {
-                    if (item.selection.endDate !== item.selection.startDate)
-                      setOpenDate(false);
-                    setDate([item.selection as DateRangeType]);
-                  }}
-                  moveRangeOnFirstSelection={false}
-                  ranges={date}
-                  className="Search-calendar"
-                  minDate={new Date()}
-                />
-              )}
-              <Button className="Search-button">Lorem</Button>
+            <div className="Search-container">
+              <div className="Search-checkboxesContainer">
+                <p>Languages: </p>
+                <div className="Search-checkboxes">
+                  {languagesCheckbox.map((lang, index) => {
+                    return (
+                      <Form.Check
+                        inline
+                        name="group1"
+                        label={lang.name}
+                        type="checkbox"
+                        id={`inline-checkbox-${index}`}
+                        className="AddPlace-checkbox"
+                        checked={lang.checked}
+                        onChange={() => handleChangeLanguageCheckbox(index)}
+                        key={index}
+                      />
+                    );
+                  })}
+                </div>
+              </div>
+              <div className="Search-checkboxesContainer">
+                <p>Type:</p>
+                <div className="Search-checkboxes">
+                  {apartmentType.map((type, index) => {
+                    return (
+                      <Form.Check
+                        inline
+                        name="group2"
+                        label={type.name}
+                        type="checkbox"
+                        id={`inline-checkbox-${4 + index}`}
+                        className="AddPlace-checkbox"
+                        checked={type.checked}
+                        onChange={() => handleChangeTypeCheckbox(index)}
+                        key={index}
+                      />
+                    );
+                  })}
+                </div>
+              </div>
+              <Button className="Search-button" onClick={handleClearSearch}>
+                Clear
+              </Button>
+              <Button className="Search-button" onClick={handleSearch}>
+                Submit
+              </Button>
             </div>
           </div>
         </>
