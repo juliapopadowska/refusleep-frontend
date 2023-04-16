@@ -1,0 +1,10 @@
+.DetailPage-container {
+    max-width: 1140px;
+    padding: 0 2rem 0.5rem 2rem;
+    margin: auto;
+
+    .DatailPage-photo {
+        object-fit: cover;
+        aspect-ratio: 16/9;
+    }
+}

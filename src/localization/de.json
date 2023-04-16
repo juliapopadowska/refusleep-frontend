@@ -1,0 +1,12 @@
+{
+  "WelcomeText": "Halo",
+  "City": "Stadt",
+  "Cities": {
+    "Cracow": "Krakau",
+    "Warsaw": "Warschau",
+    "Wroclaw": "Breslau",
+    "Poznan": "Posen",
+    "Szczecin": "Stettin",
+    "Katowice": "Katowice"
+  }
+}

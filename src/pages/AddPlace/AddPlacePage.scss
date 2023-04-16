@@ -1,0 +1,135 @@
+@import "../../globals.scss";
+
+
+.AddPlace-form {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 1140px;
+    padding: 0.5rem 2rem;
+
+    h1 {
+        text-align: center;
+        margin-top: 12px;
+    }
+
+    .Search-dropdown {
+        background-color: $jet;
+        color: white;
+        border: none;
+    }
+
+    .Search-dropdown:hover {
+        background-color: $jet_hover;
+    }
+
+    .Submit-button {
+        background-color: $air;
+        border: none;
+    }
+
+    .Submit-button:hover {
+        background-color: $air_hover;
+    }
+}
+
+.AddPlace-radios {
+    cursor: pointer !important;
+}
+
+.AddPlace-radio {
+    cursor: pointer;
+
+    input {
+        cursor: pointer;
+
+    }
+
+    input:checked {
+        background-color: $air;
+    }
+
+    label {
+        cursor: pointer;
+    }
+}
+
+.AddPlace-checkbox {
+    cursor: pointer;
+
+    input {
+        cursor: pointer;
+
+    }
+
+    input:checked {
+        background-color: $air;
+    }
+
+    label {
+        cursor: pointer;
+    }
+}
+
+.AddPlace-photosContainer {
+    display: flex;
+    width: 100%;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+    gap: 12px;
+
+
+    .AppPlace-addPhotos {
+
+
+        .AddPlace-label {
+            display: flex;
+            cursor: pointer;
+            gap: 5px;
+            border: solid 1px $jet;
+            border-radius: 5px;
+            margin-right: 10px;
+            width: 220px;
+            height: 200px;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .AddPlace-photoContainer {
+        position: relative;
+
+        .AddPlace-photo {
+            height: 200px;
+            width: 220px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .AddPlace-deletePhoto {
+            color: white;
+            cursor: pointer;
+            position: absolute;
+            top: 8px;
+            right: 16px;
+        }
+    }
+}
+
+.Spinner {
+    margin: auto;
+    color: $air;
+}
+
+.Form-loginError {
+    color: $bittersweat;
+    margin-top: -1rem;
+    margin: auto;
+}
+
+.AddPlace-addPhotosWarning {
+    color: $bittersweat;
+    margin-top: -1rem;
+}

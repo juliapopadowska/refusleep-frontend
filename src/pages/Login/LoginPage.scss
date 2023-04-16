@@ -1,0 +1,53 @@
+@import "../../globals";
+
+
+.Form-container {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    h1 {
+        margin: auto;
+        margin-bottom: 1.5rem;
+    }
+
+    .Form-loginError {
+        color: $bittersweat;
+        margin-top: -1rem;
+        margin: auto;
+        margin-bottom: 1rem;
+    }
+
+    input {
+        width: 400px;
+    }
+
+    .Submit-button {
+        background-color: $air;
+        border: none;
+        width: fit-content;
+        margin: auto;
+    }
+
+    .Submit-button:hover {
+        background-color: $air_hover;
+    }
+
+    .Register-link {
+        margin: auto;
+        margin-bottom: 1rem;
+    }
+
+    .Link {
+        color: $air;
+        margin-left: 0.5rem;
+    }
+
+    .Spinner {
+        margin: auto;
+        color: $air;
+    }
+}
