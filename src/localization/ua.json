@@ -1,0 +1,12 @@
+{
+  "WelcomeText": "Привіт",
+  "City": "місто",
+  "Cities": {
+    "Cracow": "краків",
+    "Warsaw": "варшава",
+    "Wroclaw": "Вроцлав",
+    "Poznan": "познань",
+    "Szczecin": "Щецин",
+    "Katowice": "Катовіце"
+  }
+}

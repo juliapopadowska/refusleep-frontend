@@ -1,4 +1,4 @@
-@import "../../globals";
+@import "../../../globals";
 
 .Header {
     background-color: $rose;
@@ -7,7 +7,7 @@
     .Header-upperpart {
         display: flex;
         justify-content: space-between;
-        padding: 0.5rem 2rem;
+        padding: 0.8rem 2rem;
         align-items: center;
         max-width: 1140px;
         margin: auto;
@@ -28,11 +28,62 @@
             }
 
             .Profile {
-                cursor: pointer;
-                color: $jet;
+                position: relative;
+
+                a {
+                    color: black;
+                }
+
+                .Profile-icon {
+                    color: $jet;
+                }
+
+
+                .Profile-container {
+                    background-color: $wheat;
+                    padding: 12px;
+                    position: absolute;
+                    right: 0;
+                    border-radius: 5px;
+                    z-index: 10;
+
+                    a {
+                        cursor: pointer;
+                        text-decoration: none;
+                        font-size: medium;
+
+                    }
+
+                    .Profile-link {
+                        margin-bottom: 4px;
+                        border-bottom: 1px solid $jet;
+                        cursor: pointer;
+                    }
+
+                    .Profile-link:hover {
+                        transform: scale(1.1);
+                    }
+                }
+
+                .Profile-inicial {
+                    background-color: $air;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    font-weight: 500;
+                    cursor: default;
+                }
+
+                .Profile-inicial:hover {
+                    background-color: $air_hover;
+                }
             }
 
-            .Profile:hover {
+            .Profile-icon:hover {
                 color: $jet_hover;
             }
 

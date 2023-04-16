@@ -1,0 +1,10 @@
+@import '../../globals.scss';
+
+.Profile-addButton {
+    background-color: $bittersweat  !important;
+    border: none;
+}
+
+.Profile-addButton:hover {
+    background-color: $bittersweat_hover  !important;
+}
