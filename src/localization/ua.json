@@ -75,5 +75,6 @@
   "Name": "Ім'я",
   "YourPlaces": "Ваші місця",
   "RegisterError": "Помилка реєстрації!",
-  "NamePlaceholder": "Введіть ім'я"
+  "NamePlaceholder": "Введіть ім'я",
+  "ServerError": "Ups...помилка сервера!"
 }

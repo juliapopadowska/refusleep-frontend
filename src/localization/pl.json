@@ -76,5 +76,6 @@
   "Name": "Imię",
   "YourPlaces": "Twoje miejsca",
   "RegisterError": "Błąd podczas rejestracji!",
-  "NamePlaceholder": "Wprowadź imię"
+  "NamePlaceholder": "Wprowadź imię",
+  "ServerError": "Ups...błąd serwera!"
 }

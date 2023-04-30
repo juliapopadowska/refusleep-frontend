@@ -76,5 +76,6 @@
   "Name": "Nom",
   "YourPlaces": "Vos lieux",
   "RegisterError": "Erreur de registre!",
-  "NamePlaceholder": "Saisir le nom"
+  "NamePlaceholder": "Saisir le nom",
+  "ServerError": "Oups... erreur de serveur!"
 }
