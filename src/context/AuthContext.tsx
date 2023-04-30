@@ -1,80 +1,11 @@
-// import { createContext, useEffect, useReducer } from "react";
-
 import {
   createContext,
   Dispatch,
   ReactNode,
   SetStateAction,
+  useEffect,
   useState,
 } from "react";
-
-// type UserContextState = {
-//   user: string | null;
-//   loading: boolean;
-//   error: string | null;
-//   dispatch?: React.Dispatch<any>;
-// };
-
-// export const AuthContext = createContext({
-//   user: null,
-//   loading: false,
-//   error: null,
-// });
-
-// const AuthReducer = (state: UserContextState, action: any) => {
-//   switch (action.type) {
-//     case "LOGIN_START":
-//       return {
-//         user: null,
-//         loading: true,
-//         error: null,
-//       };
-//     case "LOGIN_SUCCESS":
-//       return {
-//         user: action.payload,
-//         loading: false,
-//         error: null,
-//       };
-//     case "LOGIN_FAILURE":
-//       return {
-//         user: null,
-//         loading: false,
-//         error: action.payload,
-//       };
-//     case "LOGOUT":
-//       return {
-//         user: null,
-//         loading: false,
-//         error: null,
-//       };
-//     default:
-//       return state;
-//   }
-// };
-
-// export const AuthContextProvider = ({ children }: any) => {
-//   const [state, dispatch] = useReducer(AuthReducer, {
-//     user: null,
-//     loading: false,
-//     error: null,
-//   });
-
-//   useEffect(() => {
-//     localStorage.setItem("user", JSON.stringify(state.user));
-//   }, [state.user]);
-
-//   return (
-//     <AuthContext.Provider
-//       value={{
-//         user: state.user,
-//         loading: state.loading,
-//         error: state.error,
-//       }}
-//     >
-//       {children}
-//     </AuthContext.Provider>
-//   );
-// };
 
 export type User = {
   name: string;
@@ -86,11 +17,13 @@ export interface UserContextInterface {
   setUser: Dispatch<SetStateAction<User>>;
 }
 
+const userInitial = {
+  name: "",
+  email: "",
+};
+
 export const UserContext = createContext<UserContextInterface>({
-  user: {
-    name: "",
-    email: "",
-  },
+  user: userInitial,
   setUser: (user: User) => {},
 } as UserContextInterface);
 
@@ -99,10 +32,21 @@ type UserProvideProps = {
 };
 
 export default function UserProvider({ children }: UserProvideProps) {
-  const [user, setUser] = useState<User>({
-    name: "",
-    email: "",
+  const [user, setUser] = useState<User>(
+    localStorage.getItem("user") === null
+      ? userInitial
+      : JSON.parse(localStorage.getItem("user") || "{}")
+  );
+
+  useEffect(() => {
+    if (localStorage.getItem("user") === null) {
+      localStorage.setItem("user", JSON.stringify(userInitial));
+    }
   });
+
+  useEffect(() => {
+    localStorage.setItem("user", JSON.stringify(user));
+  }, [user]);
 
   return (
     <UserContext.Provider value={{ user, setUser }}>

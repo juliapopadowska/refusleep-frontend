@@ -1,0 +1,30 @@
+@import "../../../globals.scss";
+
+.Place {
+
+    .Place-listElements {
+        display: flex;
+        flex-direction: column;
+        font-weight: 500;
+        color: $jet;
+        position: relative;
+
+        .Place-photo {
+            width: 250px;
+            height: 250px;
+            border-radius: 5px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .Place-editIcon {
+            position: absolute;
+            color: white;
+            font-size: 36px;
+            right: 8px;
+            top: 8px;
+            cursor: pointer;
+        }
+    }
+
+}

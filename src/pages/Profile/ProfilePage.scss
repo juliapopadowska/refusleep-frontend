@@ -1,10 +1,73 @@
 @import '../../globals.scss';
 
-.Profile-addButton {
-    background-color: $bittersweat  !important;
-    border: none;
-}
 
-.Profile-addButton:hover {
-    background-color: $bittersweat_hover  !important;
+
+.Profile-container {
+    max-width: 1140px;
+    padding: 0.8rem 2rem;
+    margin: auto;
+    font-size: large;
+
+    .Profile-addButton {
+        background-color: $bittersweat  !important;
+        border: none;
+        display: flex;
+        align-items: center;
+        gap: 0.2rem;
+        float: right;
+    }
+
+    .Profile-addButton:hover {
+        background-color: $bittersweat_hover  !important;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    .Profile-nameText {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .Profile-editIcon {
+            cursor: pointer;
+        }
+
+        .Profile-form {
+            display: flex;
+            align-items: center;
+
+            .Submit-button {
+                background-color: $air;
+                border: none;
+            }
+
+            .Submit-button:hover {
+                background-color: $air_hover;
+            }
+        }
+    }
+
+    .Profile-text {
+        color: grey;
+    }
+
+    .Profile-placesContainer {
+        margin-top: 16px;
+
+        h3 {
+            text-align: center;
+        }
+
+        .Profile-places {
+            display: flex;
+            gap: 24px;
+            max-width: 1140px;
+            margin: 26px auto;
+            flex-wrap: wrap;
+            align-items: center;
+            //justify-content: center;
+        }
+    }
 }

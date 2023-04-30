@@ -8,21 +8,15 @@
     padding: 0.5rem 2rem;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+}
 
-    .Homepage-listElements {
-        display: flex;
-        flex-direction: column;
-        font-weight: 500;
-        color: $jet;
+.Homepage-noResults {
+    margin: 56px auto;
+    width: fit-content;
+}
 
-        .Homepage-photo {
-            width: 250px;
-            height: 250px;
-            border-radius: 5px;
-            object-fit: cover;
-            cursor: pointer;
-        }
+@media screen and (max-width: 1048px) {
+    .Homepage-listContainer {
+        justify-content: center;
     }
-
 }

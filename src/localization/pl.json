@@ -1,12 +1,80 @@
 {
   "WelcomeText": "Witaj",
+  "WelcomeTextLonger": "Witaj na portalu Refusleep",
   "City": "Miasto",
   "Cities": {
+    "All": "Wszystkie",
     "Cracow": "Kraków",
     "Warsaw": "Warszawa",
     "Wroclaw": "Wrocław",
     "Poznan": "Poznań",
     "Szczecin": "Szczecin",
     "Katowice": "Katowice"
-  }
+  },
+  "Language": "Języki",
+  "Type": "Typ",
+  "Languages": {
+    "Polish": "Polski",
+    "English": "Angielski",
+    "French": "Francuski",
+    "Ukrainian": "Ukraiński"
+  },
+  "Types": {
+    "Apartment": "Mieszkanie",
+    "Couch": "Kanapa",
+    "Room": "Pokój"
+  },
+  "Buttons": {
+    "Clear": "Wyczyść",
+    "Submit": "Zatwierdź",
+    "Add": "Dodaj",
+    "AddPlace": "Dodaj miejsce"
+  },
+  "Profile": "Profil",
+  "Login": "Zaloguj",
+  "Logout": "Wyloguj",
+  "LogutError": "Błąd przy próbie wylogowania!",
+  "LogoutSuccess": "Pomyślnie wylogowano!",
+  "NoResults": "Brak wyników wyszukiwania!",
+  "AddYourPlace": "Dodaj swoje miejsce",
+  "AddPlaceError": "Błąd podczas dodawania miejsca!",
+  "Address": "Adres",
+  "AddressPlaceholder": "Dodaj adres",
+  "SelectLanguages": "Wybierz języki, które znasz",
+  "SelectLanguagesError": "Musisz wybrać przynajmniej jeden język!",
+  "AddDetails": {
+    "Polish": "Dodaj szczegóły miejsca po polsku",
+    "English": "Dodaj szczegóły miejsca po angielsku",
+    "French": "Dodaj szczegóły miejsca po francusku",
+    "Ukrainian": "Dodaj szczegóły miejsca po ukraińsku"
+  },
+  "PhoneNumber": "Numer telefonu",
+  "PhoneNumberPlaceholder": "Dodaj numer telefonu",
+  "Photos": "Zdjęcia",
+  "PhotosWarning": "Dodaj przynajmniej jedno zdjęcie",
+  "Upload": "Dodaj",
+  "Details": {
+    "Polish": "Szczegóły po polsku",
+    "English": "Szczegóły po angielsku",
+    "French": "Szczegóły po francusku",
+    "Ukrainian": "Szczegóły po ukraińsku"
+  },
+  "Informations": "Informacje",
+  "ContactInfo": "Dane kontaktowe",
+  "Owner": {
+    "Name": "Imię",
+    "Email": "Email"
+  },
+  "LoginError": "Błąd podczas logowania!",
+  "Email": "Email",
+  "EmailPlaceholder": "Wprowadź email",
+  "Password": "Hasło",
+  "PasswordPlaceholder": "Wprowadź hasło",
+  "DontHaveAccount": "Nie masz jeszcze konta?",
+  "Register": "Zarejestruj się",
+  "UserInformation": "Informacje użytkownika",
+  "Name": "Imię",
+  "YourPlaces": "Twoje miejsca",
+  "RegisterError": "Błąd podczas rejestracji!",
+  "NamePlaceholder": "Wprowadź imię"
 }

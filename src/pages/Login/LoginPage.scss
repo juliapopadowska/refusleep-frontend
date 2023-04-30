@@ -51,3 +51,14 @@
         color: $air;
     }
 }
+
+@media screen and (max-width: 1048px) {
+    .Form-container {
+        padding: 2rem;
+        width: 100%;
+
+        input {
+            width: 100% !important;
+        }
+    }
+}

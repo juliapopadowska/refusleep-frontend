@@ -50,7 +50,6 @@
                     a {
                         cursor: pointer;
                         text-decoration: none;
-                        font-size: medium;
 
                     }
 
@@ -122,18 +121,20 @@
         width: fit-content;
         margin: auto;
         position: absolute;
-        bottom: -36px;
+        bottom: -46px;
         left: 50%;
         transform: translate(-50%);
         box-shadow: 1px 1px 13px -5px rgba(66, 68, 90, 1);
         border-radius: 5px;
         gap: 24px;
         align-items: center;
+        z-index: 10;
 
         .Search-dropdown {
             background-color: $jet;
             color: white;
             border: none;
+            z-index: 10;
         }
 
         .Search-dropdown:hover {
@@ -160,6 +161,46 @@
 
             .Search-checkboxes {
                 display: flex;
+            }
+
+            .Search-buttons {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                gap: 5px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1048px) {
+    .Header-search {
+        flex-direction: column;
+        height: fit-content;
+        position: static !important;
+        transform: none !important;
+        border-radius: 0px !important;
+        width: 100% !important;
+
+        .Search-container {
+            flex-direction: row;
+        }
+
+        .Search-checkboxesContainer {
+            border-left: none !important;
+        }
+
+        .Search-checkboxes {
+            flex-direction: column;
+        }
+
+        .Search-buttons {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            .Search-button {
+                margin-left: 0px;
             }
         }
     }

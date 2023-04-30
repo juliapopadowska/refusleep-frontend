@@ -123,6 +123,13 @@
     color: $air;
 }
 
+.Spinner-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .Form-loginError {
     color: $bittersweat;
     margin-top: -1rem;

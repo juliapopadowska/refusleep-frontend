@@ -1,12 +1,14 @@
 import axios from "axios";
 import React, { useContext, useState } from "react";
 import { Button, Form, Spinner } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
 import Header from "../../components/common/Header/Header";
 import { UserContext } from "../../context/AuthContext";
 import "./LoginPage.scss";
 
 function LoginPage() {
+  const { t } = useTranslation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -38,31 +40,31 @@ function LoginPage() {
     <div>
       <Header />
       <Form className="Form-container" onSubmit={handleLogin}>
-        <h1>Login</h1>
-        {error && <div className="Form-loginError">Lorem ipsum</div>}
+        <h1>{t("Login")}</h1>
+        {error && <div className="Form-loginError">{t("LoginError")}</div>}
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
+          <Form.Label>{t("Email")}</Form.Label>
           <Form.Control
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             type="email"
-            placeholder="Enter email"
+            placeholder={`${t("EmailPlaceholder")}`}
           />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
+          <Form.Label>{t("Password")}</Form.Label>
           <Form.Control
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             type="password"
-            placeholder="Password"
+            placeholder={`${t("PasswordPlaceholder")}`}
           />
         </Form.Group>
         <div className="Register-link">
-          Lorem ipsum
+          {t("DontHaveAccount")}
           <Link className="Link" to="/register">
-            Lorem
+            {t("Register")}
           </Link>
         </div>
         {loading ? (
@@ -71,7 +73,7 @@ function LoginPage() {
           </Spinner>
         ) : (
           <Button className="Submit-button" type="submit">
-            Submit
+            {t("Buttons.Submit")}
           </Button>
         )}
       </Form>

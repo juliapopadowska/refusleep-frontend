@@ -1,5 +1,6 @@
 {
   "WelcomeText": "Hello",
+  "WelcomeTextLonger": "Welcome to Refusleep",
   "City": "City",
   "Cities": {
     "Cracow": "Cracow",
@@ -7,6 +8,74 @@
     "Wroclaw": "Wroclaw",
     "Poznan": "Poznan",
     "Szczecin": "Szczecin",
-    "Katowice": "Katowice"
-  }
+    "Katowice": "Katowice",
+    "All": "All Cities"
+  },
+  "Language": "Languages",
+  "Type": "Type",
+  "Languages": {
+    "Polish": "Polish",
+    "English": "English",
+    "French": "French",
+    "Ukrainian": "Ukrainian"
+  },
+  "Types": {
+    "Apartment": "Apartment",
+    "Couch": "Couch",
+    "Room": "Room"
+  },
+  "Buttons": {
+    "Clear": "Clear",
+    "Submit": "Submit",
+    "Add": "Add",
+    "AddPlace": "Add Place"
+  },
+  "Profile": "Profile",
+  "Login": "Login",
+  "Logout": "Logout",
+  "LogutError": "Error while logout!",
+  "LogoutSuccess": "Logout success!",
+  "NoResults": "No results found!",
+  "AddYourPlace": "Add your place",
+  "AddPlaceError": "Error while adding place!",
+  "Address": "Address",
+  "AddressPlaceholder": "Enter Address",
+  "SelectLanguages": "Select languages the you know",
+  "SelectLanguagesError": "You need to select at least one language!",
+  "AddDetails": {
+    "Polish": "Add details in Polish",
+    "English": "Add details in English",
+    "French": "Add details in French",
+    "Ukrainian": "Add details in Ukrainian"
+  },
+  "PhoneNumber": "Phone Number",
+  "PhoneNumberPlaceholder": "Enter phone number",
+  "Photos": "Photos",
+  "PhotosWarning": "Add at least one photo!",
+  "Upload": "Upload",
+  "Details": {
+    "Polish": "Details in Polish",
+    "English": "Details in English",
+    "French": "Details in French",
+    "Ukrainian": "Details in Ukrainian"
+  },
+  "Informations": "Informations",
+  "ContactInfo": "Contact Info",
+  "Owner": {
+    "Name": "Name",
+    "Email": "Email"
+  },
+  "LoginError": "Login error!",
+  "Email": "Email",
+  "EmailPlaceholder": "Enter email",
+  "Password": "Password",
+  "PasswordPlaceholder": "Enter password",
+  "DontHaveAccount": "Don't have an account yet?",
+  "Register": "Register",
+  "UserInformation": "User Information",
+  "Name": "Name",
+  "YourPlaces": "Your Places",
+  "RegisterError": "Register Error!",
+  "NamePlaceholder": "Enter name",
+  "ServerError": "Ups...server error!"
 }
