@@ -24,7 +24,9 @@ function ProfilePage() {
     const fetchProfileData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get("/api/users/profile");
+        const response = await axios.get("/api/users/profile", {
+          withCredentials: true,
+        });
         if (response.status === 200) {
           setUser(response.data);
           setNewUserName(response.data.name);
@@ -43,7 +45,9 @@ function ProfilePage() {
     const fetchPlaces = async () => {
       try {
         setLoadingPlaces(true);
-        const response = await axios.get("/api/users/user-places");
+        const response = await axios.get("/api/users/user-places", {
+          withCredentials: true,
+        });
         if (response.status === 200) {
           setPlaces(response.data);
         }
