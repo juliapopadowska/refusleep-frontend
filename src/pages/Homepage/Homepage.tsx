@@ -1,50 +1,63 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Alert, Spinner } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
-import { useNavigate } from "react-router-dom";
 import Header from "../../components/common/Header/Header";
+import Place from "../../components/common/Place/Place";
 import { Apartment } from "../../types";
 import "./Homepage.scss";
 
 function Homepage() {
   const { t } = useTranslation();
   const [apartments, setApartments] = useState<Apartment[]>([]);
-  const navigate = useNavigate();
-
-  const handleDisplayDetails = (id: string) => {
-    navigate(`/apartment/${id}`);
-  };
+  const [data, setData] = useState<Apartment[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    axios
-      .get("/api/apartments/apartments")
-      .then(({ data }) => setApartments(data));
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get("/api/apartments/apartments");
+        if (response.status === 200) {
+          setApartments(response.data);
+          setData(response.data);
+        }
+        setLoading(false);
+      } catch (error) {
+        setLoading(false);
+        setError(true);
+        setTimeout(() => {
+          setError(false);
+        }, 2000);
+      }
+    };
+    fetchData();
   }, []);
+
   return (
     <div className="Homepage">
-      <Header type="withSearch" />
-      <div className="Homepage-listContainer">
-        {apartments.map((ap, index) => {
-          return (
-            <div
-              className="Homepage-listElements"
-              key={index}
-              onClick={() => handleDisplayDetails(ap._id)}
-            >
-              {ap.photos[0] && (
-                <img
-                  className="Homepage-photo"
-                  alt={`${ap.address}`}
-                  src={`${process.env.REACT_APP_API_URL}/uploads/${ap.photos[0]}`}
-                />
-              )}
-              <div>
-                {t(`Cities.${ap.city}`)}, {ap.address}
-              </div>
-            </div>
-          );
-        })}
-      </div>
+      <Header type="withSearch" apartments={apartments} setData={setData} />
+      {loading ? (
+        <div className="Spinner-container">
+          <Spinner className="Spinner" animation="border" role="status">
+            <span className="visually-hidden">Loading...</span>
+          </Spinner>
+        </div>
+      ) : data.length > 0 ? (
+        <div className="Homepage-listContainer">
+          {data.map((ap, index) => {
+            return <Place key={index} homepage apartment={ap} />;
+          })}
+        </div>
+      ) : (
+        <div className="Homepage-noResults">{t("NoResults")}</div>
+      )}
+      {error && (
+        <Alert className="alert" variant="danger">
+          {t("ServerError")}
+        </Alert>
+      )}
     </div>
   );
 }

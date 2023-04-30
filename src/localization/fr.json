@@ -1,0 +1,80 @@
+{
+  "WelcomeText": "Bonjour",
+  "WelcomeTextLonger": "Bienvenue à Refusleep",
+  "City": "Ville",
+  "Cities": {
+    "Cracow": "Cracovie",
+    "Warsaw": "Varsovie",
+    "Wroclaw": "Wroclaw",
+    "Poznan": "Poznan",
+    "Szczecin": "Szczecin",
+    "Katowice": "Katowice",
+    "All": "Toutes les villes"
+  },
+  "Language": "Langues",
+  "Type": "Type",
+  "Languages": {
+    "Polish": "Polonais",
+    "English": "Anglais",
+    "French": "Français",
+    "Ukrainian": "Ukrainien"
+  },
+  "Types": {
+    "Apartment": "Appartement",
+    "Couch": "Canapé",
+    "Room": "Chambre"
+  },
+  "Buttons": {
+    "Clear": "Clair",
+    "Submit": "Soumettre",
+    "Add": "Ajouter",
+    "AddPlace": "Ajouter un lieu"
+  },
+  "Profile": "Profil",
+  "Login": "Connexion",
+  "Logout": "Déconnexion",
+  "LogutError": "Erreur lors de la déconnexion!",
+  "LogoutSuccess": "Déconnexion réussie!",
+  "NoResults": "Aucun résultat trouvé!",
+  "AddYourPlace": "Ajouter un lieu",
+  "AddPlaceError": "Erreur lors de l'ajout d'un lieu!",
+  "Address": "Adresse",
+  "AddressPlaceholder": "Saisir l'adresse",
+  "SelectLanguages": "Sélectionnez les langues que vous connaissez",
+  "SelectLanguagesError": "Vous devez sélectionner au moins une langue!",
+  "AddDetails": {
+    "Polish": "Ajouter des détails en polonais",
+    "English": "Ajouter des détails en anglais",
+    "French": "Ajouter des détails en français",
+    "Ukrainian": "Ajouter des détails en ukrainien"
+  },
+  "PhoneNumber": "Numéro de téléphone",
+  "PhoneNumberPlaceholder": "Saisir le numéro de téléphone",
+  "Photos": "Photos",
+  "PhotosWarning": "Ajoutez au moins une photo!",
+  "Upload": "Télécharger",
+  "Details": {
+    "Polish": "Détails en polonais",
+    "English": "Détails en anglais",
+    "French": "Détails en français",
+    "Ukrainian": "Détails en ukrainien"
+  },
+  "Informations": "Informations",
+  "ContactInfo": "Contact",
+  "Owner": {
+    "Name": "Nom",
+    "Email": "Email"
+  },
+  "LoginError": "Erreur de connexion!",
+  "Email": "Email",
+  "EmailPlaceholder": "Saisir l'adresse électronique",
+  "Password": "Mot de passe",
+  "PasswordPlaceholder": "Saisir le mot de passe",
+  "DontHaveAccount": "Vous n'avez pas encore de compte?",
+  "Register": "Registre",
+  "UserInformation": "Informations sur l'utilisateur",
+  "Name": "Nom",
+  "YourPlaces": "Vos lieux",
+  "RegisterError": "Erreur de registre!",
+  "NamePlaceholder": "Saisir le nom"
+}

@@ -1,5 +1,6 @@
 {
   "WelcomeText": "Привіт",
+  "WelcomeTextLonger": "Ласкаво просимо до Refusleep",
   "City": "місто",
   "Cities": {
     "Cracow": "краків",
@@ -8,5 +9,71 @@
     "Poznan": "познань",
     "Szczecin": "Щецин",
     "Katowice": "Катовіце"
-  }
+  },
+  "Language": "Мови",
+  "Type": "Тип",
+  "Languages": {
+    "Polish": "Польська",
+    "English": "Англійська мова",
+    "French": "Французька",
+    "Ukrainian": "Українська"
+  },
+  "Types": {
+    "Apartment": "Квартира",
+    "Couch": "Диван",
+    "Room": "Кімната"
+  },
+  "Buttons": {
+    "Clear": "Чисто",
+    "Submit": "Надіслати",
+    "Add": "Додати",
+    "AddPlace": "Додати місце"
+  },
+  "Profile": "Профіль",
+  "Login": "Логін",
+  "Logout": "Вийти з системи",
+  "LogutError": "Помилка під час виходу з системи!",
+  "LogoutSuccess": "Успішний вихід з системи!",
+  "NoResults": "Не знайдено жодного результату!",
+  "AddYourPlace": "Додайте своє місце",
+  "AddPlaceError": "Помилка при додаванні місця!",
+  "Address": "Адреса",
+  "AddressPlaceholder": "Введіть адресу",
+  "SelectLanguages": "Виберіть мови, які ви знаєте",
+  "SelectLanguagesError": "Вам потрібно вибрати принаймні одну мову!",
+  "AddDetails": {
+    "Polish": "Додати інформацію польською мовою",
+    "English": "Додайте деталі англійською мовою",
+    "French": "Додати інформацію французькою мовою",
+    "Ukrainian": "Додайте деталі українською мовою"
+  },
+  "PhoneNumber": "Номер телефону",
+  "PhoneNumberPlaceholder": "Введіть номер телефону",
+  "Photos": "Фотографії",
+  "PhotosWarning": "Додайте принаймні одну фотографію!",
+  "Upload": "Завантажити",
+  "Details": {
+    "Polish": "Деталі польською мовою",
+    "English": "Деталі англійською мовою",
+    "French": "Деталі французькою мовою",
+    "Ukrainian": "Деталі українською мовою"
+  },
+  "Informations": "Інформація",
+  "ContactInfo": "Контактна інформація",
+  "Owner": {
+    "Name": "Ім'я",
+    "Email": "Електронна пошта"
+  },
+  "LoginError": "Помилка входу в систему!",
+  "Email": "Електронна пошта",
+  "EmailPlaceholder": "Введіть електронну пошту",
+  "Password": "Пароль",
+  "PasswordPlaceholder": "Введіть пароль",
+  "DontHaveAccount": "Ще не маєте облікового запису?",
+  "Register": "Зареєструватися",
+  "UserInformation": "Інформація про користувача",
+  "Name": "Ім'я",
+  "YourPlaces": "Ваші місця",
+  "RegisterError": "Помилка реєстрації!",
+  "NamePlaceholder": "Введіть ім'я"
 }

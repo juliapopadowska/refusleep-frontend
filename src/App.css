@@ -1,1 +1,6 @@
-
+.alert {
+  position: fixed !important;
+  top: 8px;
+  left: 50%;
+  transform: translate(-50%);
+}

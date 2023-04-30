@@ -8,7 +8,7 @@ export type Apartment = {
   phoneNumber: string;
   polishDetails: string;
   englishDetails: string;
-  germanDetails: string;
+  frenchDetails: string;
   ukrainianDetails: string;
 };
 
@@ -16,5 +16,5 @@ export type User = {
   _id: string;
   email: string;
   name: string;
-  password: string;
+  password?: string;
 };
