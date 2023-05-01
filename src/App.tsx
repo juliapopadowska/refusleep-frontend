@@ -13,6 +13,7 @@ import ProfilePage from "./pages/Profile/ProfilePage";
 import DetailPage from "./pages/Detail/DetailPage";
 
 axios.defaults.baseURL = process.env.REACT_APP_API_URL;
+axios.defaults.withCredentials = true;
 
 const ProtectedRoute = ({ children }: any) => {
   const { user } = useContext(UserContext);
